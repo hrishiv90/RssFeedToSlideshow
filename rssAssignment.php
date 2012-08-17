@@ -2,14 +2,14 @@
 	/* Demo styles */
 	html,body{background:#222;margin:0;}
 	body{border-top:4px solid #000;}
-      .content{color:#777;font:12px/1.4 "helvetica neue",arial,sans-serif;width:620px;margin:20px auto;}
+      	.content{color:#777;font:12px/1.4 "helvetica neue",arial,sans-serif;width:620px;margin:20px auto;}
     	h1{font-size:12px;font-weight:normal;color:#ddd;margin:0;}
    	p{margin:0 0 20px}
     	a{color:#22BCB9;text-decoration:none;}
     	.cred{margin-top:20px;font-size:12px;}
 
-    /* This rule is read by Galleria to define the gallery height: */
-    #galleria{height:320px}
+    	/* This rule is read by Galleria to define the gallery height: */
+    	#galleria{height:320px}
 </style>
 
 <!-- load jQuery -->
@@ -19,21 +19,21 @@
 <script src="js/galleria-1.2.8.min.js"></script>
 
 <script>
-    // Load the classic theme
-    Galleria.loadTheme('galleria.classic.min.js');
+	// Load the classic theme
+	Galleria.loadTheme('galleria.classic.min.js');
 
-    // Initialize Galleria
-    Galleria.run('#galleria');
+    	// Initialize Galleria
+    	Galleria.run('#galleria');
 </script>
 
 <div class="content">
 	<center>
-    	<p class="cred" style="color:#FFF;">
-        	Note: To view information about feed click on the " <b><I>i</I></b> " symbol
-        </p>
-    </center>
+    		<p class="cred" style="color:#FFF;">
+        		Note: To view information about feed click on the " <b><I>i</I></b> " symbol
+        	</p>
+    	</center>
 	<?php
-    	$rss_tags = array(
+    		$rss_tags = array(
 			'title',
 		);
 		$rss_item_tag = 'item';
@@ -51,7 +51,7 @@
 			$items_img = array();
 			$pos=0;
   			echo "<div id='galleria'>";
-		      $i=0;
+		      	$i=0;
 			$j=0;
 			 
 			foreach($doc->getElementsByTagName($tag) AS $node) {
@@ -77,8 +77,8 @@
 	?>
 	</div>
 	<center>
-    	<p class="cred" style="padding: 5px 0 0 37%;">
-        	Made by <a href="#" style="padding-left:0;">Hrishikesh A. Vaipurkar</a>.
-        </p>
-    </center>
+    		<p class="cred" style="padding: 5px 0 0 37%;">
+        		Made by <a href="#" style="padding-left:0;">Hrishikesh A. Vaipurkar</a>.
+        	</p>
+    	</center>
 </div>
