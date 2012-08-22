@@ -1,64 +1,34 @@
 <HTML>
   <head>
 	<title>RSS Feed</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-    	<style>
-            /* Demo styles */
-            html,body{background:#222;margin:0;}
-            body{border-top:4px solid #000;}
-            .content{color:#777;font:12px/1.4 "helvetica neue",arial,sans-serif;width:620px;margin:20px auto;}
-            h1{font-size:12px;font-weight:normal;color:#ddd;margin:0;}
-            p{margin:0 0 20px}
-            a {color:#22BCB9;text-decoration:none;}
-            .cred{margin-top:20px;font-size:12px;}
-            /* This rule is read by Galleria to define the gallery height: */
-            #galleria{height:320px}
-        </style>
-
-        <!-- load jQuery -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-        <!-- load Galleria -->
-        <script src="js/galleria-1.2.8.min.js"></script>
-		
-		<script type="text/javascript">
-			function update(){
-				document.getElementById("assign").innerHTML="<img alt='Loading' src='images/loader.gif' style='padding-left: 47%;'>";
-  				if (window.XMLHttpRequest){
-					// code for IE7+, Firefox, Chrome, Opera, Safari
-					xmlhttp=new XMLHttpRequest();
-				}
-				else{
-					// code for IE6, IE5
-					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				xmlhttp.onreadystatechange=function(){
-					if (xmlhttp.readyState==4 && xmlhttp.status==200)
-					{
-						// Load the classic theme
-						Galleria.loadTheme('galleria.classic.min.js');
-						document.getElementById("view-assign").style.display="none";
-						document.getElementById("assign").innerHTML=xmlhttp.responseText;
-						document.getElementById("assign").style.display="none";
-						// Initialize Galleria
-						Galleria.run('#galleria');
-						$("#assign").slideToggle("slow");
-					}
-				}
-				xmlhttp.open("GET","rssAssignment.php",true);
-				xmlhttp.send();
-			}
-		</script>
-	</head>
-	<body>
-		<center>
-			<div id="content">
-				<h1 style="font-size:20px; padding: 10px 0 0 20px;">RSS Feed display</h1>
-				<p>RtCamp Assignment</p>
-				<a id="view-assign" href="#" onClick="update();">Click here to view RSS Feeds Assignment</a>
-				<div id="assign" >
-					<!--Area for displaying the assignment-->
-				</div>
+	    <!-- linking the style sheet -->
+    	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    	    <!-- load jQuery -->
+    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	    <!-- load Galleria -->
+    	<script src="js/galleria-1.2.8.min.js"></script>
+	    <!-- load Ajax code -->
+	<script type="text/javascript" src="js/rss.js"></script>    
+  </head>
+  <body>
+    	<center>
+        	<div id="content">
+			<div id="header">
+				<div class="url"> 
+                			Enter the Rss Feeds URL: <br/>
+                    			<input type="text" id="feed_url" value="">
+                    			<input type="button" onClick="update();" value="Go" style="font-size:110%;"><br>
+                    			Eg: 1. http://hackaday.com/feed/ <br>2. http://devilsworkshop.org/feed/
+                		</div>
+        		 iv class="title">
+            		<h1>RSS Feed display</h1>
+					<p>RtCamp Assignment</p>
+            	</div>
+            </div>
+			<div id="assign">
+				<!--Area for displaying the assignment-->
 			</div>
-		</center>
+        </div>
+        </center>
 	</body>
 </HTML>
