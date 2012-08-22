@@ -1,6 +1,7 @@
 <div class="content">
 	<p class="cred" style="color:#FFF;">
-   		Note: To view information about feed click on the " <I>i</I> " symbol
+   		Note: #To view information about feed click on the " <I>i</I> " symbol<br>
+                      #Only post with images will be displayed
 	</p>
 	<?php include("crop.php");
    		$rss_tags = array(
