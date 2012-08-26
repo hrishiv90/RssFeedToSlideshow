@@ -3,8 +3,8 @@
 Rss Feed display a.k.a. Rss Feed to Slideshow is an Assignment designed and developed for rtCamp Solutions Pvt. Ltd.
 
 Details:
-1. Site retrives a RSS feed using PHP. Feed URL:-http://devilsworkshop.org/feed
-2. It Parse titles of each post. (there are 10 titles for 10 posts)
+1. Site retrives a RSS feed using PHP. Feed URL such as "http://devilsworkshop.org/feed/" is to be entered in a TextBox.
+2. The site loads the XML file and Parse titles of each post. (there are 10 titles for 10 posts)
 3. It also Parse content part of each post to extract first image tag <img>. Here simple string find mechanism is used.
 4. 10 titles & image pairs are displayed as HTML by using a jQuery-slider image gallery to rotate title+image pairs as slideshow.
 --------------------------------------------------------------------------------------------------------------------------------------
