@@ -19,9 +19,8 @@
 		function rss_to_array($tag, $array, $url){
 			$doc = new DOMdocument();
 			$doc->load($url);			//load the feeds as an XML document from file
-			$doc2 = file_get_contents($url);
-			$items = array();
-			$items_img = array();
+			$doc2 = file_get_contents($url);	//load the xml file as in string format
+			$items = array();			//defining arrays to 
 			$pos=0;
   			echo "<div id='galleria'>";
 	    		$j=0;
@@ -37,9 +36,12 @@
 				//function call to get address of original image of this post
 				$img_source = img_src(substr($doc2, $pos, $pos_end-$pos));
 				if($img_source!=""){
-					$img_source = img_crop($j, $img_source); //function to get address of thumbnail image
-					echo "<a href='".$img_source."'><img data-title='".$items[$value]."' src='".$img_source."'> </a>";
-				}
+					$img_source = img_crop($j, $img_source);	//function to get address of cropped image
+					$items["pubDate"] = substr($items[pubDate], 0 , strpos($items[pubDate], ":", 0)-3);
+						//display all the titles & images
+					echo "<a href='".$img_source."'><img src='".$img_source."' data-link='".$items["link"]."'> </a>";
+					echo "<div class='layer'><div><h2>".$items["title"]."</h2><p>Published: ".$items["pubDate"]." <a href='".$items["link"]."'>View blog...</a></p></div></div>";
+				}}
 				$pos = $pos_end;
 				$j++;
 			}
