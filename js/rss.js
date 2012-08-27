@@ -21,7 +21,16 @@ function update() {
 				document.getElementById("assign").style.display="none";
 				$("#assign").slideToggle("slow");
 					//Run SlideShow 
-				Galleria.run('#galleria');
+				$('#galleria').galleria({
+					layerfollow: 'true',
+					transition: 'fadeslide',
+				        dataConfig: function(img) {
+				            // return the layer data, based on HTML structure
+				            return {
+			            	    layer: $(img).parent().next('.layer').html()
+						}
+					}
+				});
 			}
 		}
 		xmlhttp.open("GET","rssAssignment.php?feed_url="+url,true);	//load the feeds and slideshow to display
